@@ -941,22 +941,26 @@
         </div>
       </div>
 
-      <form onsubmit="event.preventDefault(); alert('Preview only — this form is not yet connected.');">
+      <form id="contactForm">
+        <input type="hidden" name="access_key" value="42c27893-ada7-4850-8a65-96d113fb14a9">
+        <input type="hidden" name="subject" value="New inquiry from Senior Life Navigator website">
+        <input type="hidden" name="from_name" value="Senior Life Navigator Website">
+        <input type="checkbox" name="botcheck" style="display:none;">
         <div class="form-row">
           <label for="name">Name</label>
-          <input type="text" id="name" required>
+          <input type="text" id="name" name="name" required>
         </div>
         <div class="form-row">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" required>
+          <input type="tel" id="phone" name="phone" required>
         </div>
         <div class="form-row">
           <label for="email">Email</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="form-row">
           <label for="service">Which service are you interested in?</label>
-          <select id="service" onchange="document.getElementById('service-hint').textContent = this.value && this.value !== 'Not sure yet' ? 'Tell us a bit more about your ' + this.value.toLowerCase() + ' needs.' : 'Tell us a little about what kind of support you\'re looking for.';">
+          <select id="service" name="service_interested" onchange="document.getElementById('service-hint').textContent = this.value && this.value !== 'Not sure yet' ? 'Tell us a bit more about your ' + this.value.toLowerCase() + ' needs.' : 'Tell us a little about what kind of support you\'re looking for.';">
             <option>Not sure yet</option>
             <option>Technology &amp; Home Safety</option>
             <option>Planning &amp; Coordination</option>
@@ -969,7 +973,7 @@
         </div>
         <div class="form-row">
           <label for="about">I'm reaching out about</label>
-          <select id="about">
+          <select id="about" name="reaching_out_about">
             <option>Myself</option>
             <option>A parent or family member</option>
             <option>A general question</option>
@@ -977,14 +981,15 @@
         </div>
         <div class="form-row">
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell us a little about what kind of support you're looking for." id-hint-target="service-hint"></textarea>
+          <textarea id="message" name="message" placeholder="Tell us a little about what kind of support you're looking for." id-hint-target="service-hint"></textarea>
           <p id="service-hint" style="font-size:12.5px;color:var(--sage);margin-top:6px;">Tell us a little about what kind of support you're looking for.</p>
         </div>
         <div class="checkbox-row">
-          <input type="checkbox" id="optin">
+          <input type="checkbox" id="optin" name="opt_in" value="Yes">
           <label for="optin">I'd like to occasionally receive helpful updates and resources from Senior Life Navigator by email.</label>
         </div>
-        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+        <button type="submit" class="btn btn-primary form-submit" id="contactSubmitBtn">Send Message</button>
+        <p id="formStatus" style="margin-top:14px; font-size:14.5px; display:none;"></p>
       </form>
     </div>
   </section>
@@ -1109,6 +1114,47 @@
       btn.classList.remove('is-on');
     }
   };
+  // ---- Contact form: real submission via Web3Forms ----
+  (function(){
+    var form = document.getElementById('contactForm');
+    if(!form) return;
+    var btn = document.getElementById('contactSubmitBtn');
+    var status = document.getElementById('formStatus');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      btn.disabled = true;
+      var originalText = btn.textContent;
+      btn.textContent = 'Sending...';
+      status.style.display = 'none';
+
+      var formData = new FormData(form);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(data.success){
+          status.textContent = "Thanks — your message is on its way. We'll be in touch soon.";
+          status.style.color = 'var(--navy)';
+          status.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Submission failed');
+        }
+      })
+      .catch(function(){
+        status.textContent = "Something went wrong sending this. Please email us directly at info@seniorlifenavigator.ca or call (519) 804-6141.";
+        status.style.color = '#B91C1C';
+        status.style.display = 'block';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = originalText;
+      });
+    });
+  })();
 </script>
 </body>
 </html>
