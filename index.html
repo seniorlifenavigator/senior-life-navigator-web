@@ -1061,7 +1061,7 @@
           <label for="optin">I'd like to occasionally receive helpful updates and resources from Senior Life Navigator by email.</label>
         </div>
         <button type="submit" class="btn btn-primary form-submit" id="contactSubmitBtn">Send Message</button>
-        <p id="formStatus" style="margin-top:14px; font-size:14.5px; display:none;"></p>
+        <p id="formStatus" style="margin-top:14px; font-size:16px; font-weight:700; display:none;"></p>
       </form>
     </div>
   </section>
@@ -1208,8 +1208,8 @@
       .then(function(res){ return res.json(); })
       .then(function(data){
         if(data.success){
-          status.textContent = "Thanks! Your message is on its way. We'll be in touch soon.";
-          status.style.color = 'var(--navy)';
+          status.textContent = "Thanks! Your message is on its way. Please check your Junk/Spam folder for our reply if it's not in your inbox within a few minutes.";
+          status.style.color = '#D97B30';
           status.style.display = 'block';
           form.reset();
         } else {
