@@ -389,6 +389,27 @@
   .cat li .price{
     color:var(--navy); font-weight:700; font-size:14px; white-space:nowrap; flex:none;
   }
+  .cat .svc-item{
+    border-bottom:1px solid rgba(3,105,161,0.08); padding:0;
+  }
+  .cat .svc-item:last-child{border-bottom:none;}
+  .cat .svc-item summary{
+    list-style:none; cursor:pointer; padding:9px 0;
+    display:flex; gap:10px; justify-content:space-between; align-items:baseline;
+    font-size:15px; color:var(--ink-soft);
+  }
+  .cat .svc-item summary::-webkit-details-marker{display:none;}
+  .cat .svc-item .item-name{display:flex; gap:9px; align-items:baseline;}
+  .cat .svc-item .item-name::before{content:"✓"; color:var(--amber); font-weight:700; flex:none;}
+  .cat .svc-item .right{display:flex; gap:10px; align-items:baseline; flex:none;}
+  .cat .svc-item .price{color:var(--navy); font-weight:700; font-size:14px; white-space:nowrap;}
+  .cat .svc-item .chevron{color:var(--amber); font-weight:700; font-size:15px; width:14px; text-align:center;}
+  .cat .svc-item[open] .chevron::before{content:"–";}
+  .cat .svc-item .chevron::before{content:"+";}
+  .cat .svc-detail{
+    margin:0 0 14px; padding:12px 14px 12px 24px; font-size:13.5px; line-height:1.55;
+    color:var(--ink-soft); background:var(--white); border-left:2px solid var(--amber-light); border-radius:0 4px 4px 0;
+  }
 
   /* ---------- ABOUT ---------- */
   /* ---------- WHY CHOOSE US ---------- */
@@ -815,52 +836,115 @@
         <div class="cat">
           <h3>Technology &amp; Home Safety</h3>
           <ul>
-            <li><span class="item-name">Tech Starter Visit</span><span class="price">$89</span></li>
-            <li><span class="item-name">Smart Home Safety Setup</span><span class="price">$300–500+</span></li>
+            <details class="svc-item">
+              <summary><span class="item-name">Tech Starter Visit</span><span class="right"><span class="price">$89</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A 90-minute home visit — phone/tablet setup, MyChart, Zoom setup, scam-awareness basics, and an online banking walkthrough.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Smart Home Safety Setup</span><span class="right"><span class="price">$300–500+</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Installation and training for smart doorbells, motion-sensor lighting, and emergency buttons (battery/plug-in devices). Work needing permanent wiring is referred to a licensed electrician.</p>
+            </details>
           </ul>
         </div>
         <div class="cat">
           <h3>Planning &amp; Coordination</h3>
           <ul>
-            <li><span class="item-name">Aging-at-Home Coordination Plan</span><span class="price">$1,000–1,500</span></li>
-            <li><span class="item-name">Annual Review</span><span class="price">$250</span></li>
-            <li><span class="item-name">Downsizing Coordination</span><span class="price">$1,500+</span></li>
-            <li><span class="item-name">Estate Planning Coordination</span><span class="price">$250–500</span></li>
+            <details class="svc-item">
+              <summary><span class="item-name">Aging-at-Home Coordination Plan</span><span class="right"><span class="price">$1,000–1,500</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A 9-step plan: pre-intake, home-readiness observation, home modification planning, smart home tech setup, emergency planning, transportation planning, community connections, and seasonal planning — delivered as a written action plan with 30-day follow-up.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Annual Review</span><span class="right"><span class="price">$250</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A 60-minute yearly check-in — updating the action plan, reviewing installed systems, and written recommendations.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Downsizing Coordination</span><span class="right"><span class="price">$1,500+</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A moving timeline, document digitization, change-of-address notifications, sorting guidance, and coordination with third-party movers and services. We never buy or sell belongings.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Estate Planning Coordination</span><span class="right"><span class="price">$250–500</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Research for a lawyer, accountant, or financial advisor, booking the first appointment, and administrative follow-up. We never give legal advice, prepare documents, or take a commission.</p>
+            </details>
           </ul>
         </div>
         <div class="cat">
           <h3>Government &amp; Paperwork</h3>
           <ul>
-            <li><span class="item-name">Government Navigation</span><span class="price">$45–75/form</span></li>
-            <li><span class="item-name">Family Admin Express</span><span class="price">$45–75</span></li>
-            <li><span class="item-name">OHAH Preparation</span><span class="price">$150–200</span></li>
+            <details class="svc-item">
+              <summary><span class="item-name">Government Navigation</span><span class="right"><span class="price">$45–75/form</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Help completing OHIP, CRA, CPP/OAS, and Service Canada applications. We never sign as your representative.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Family Admin Express</span><span class="right"><span class="price">$45–75</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Help completing a single form or application.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">OHAH Preparation</span><span class="right"><span class="price">$150–200</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A 60-minute pre-assessment prep session, a post-assessment gap analysis, and a recommended blend of public and private support.</p>
+            </details>
           </ul>
         </div>
         <div class="cat">
           <h3>Appointments &amp; Everyday Support</h3>
           <ul>
-            <li><span class="item-name">Appointment Companion</span><span class="price">$40–60/hr</span></li>
-            <li><span class="item-name">Errand &amp; Shopping Support</span><span class="price">$40–60/hr</span></li>
-            <li><span class="item-name">Transportation Coordination</span><span class="price">$45–75</span></li>
-            <li><span class="item-name">Companionship Visits</span><span class="price">$40–50/hr</span></li>
-            <li><span class="item-name">Comprehensive Coordination Support</span><span class="price">$65–85/hr</span></li>
+            <details class="svc-item">
+              <summary><span class="item-name">Appointment Companion</span><span class="right"><span class="price">$40–60/hr</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Accompaniment to appointments, follow-through, note-taking, and a summary afterward. We don't drive — licensed transportation is arranged separately.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Errand &amp; Shopping Support</span><span class="right"><span class="price">$40–60/hr</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Accompaniment to the grocery store, pharmacy, bank, or café, and shopping help. We never handle your money.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Transportation Coordination</span><span class="right"><span class="price">$45–75</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Arranging licensed transportation and coordinating the day. We don't drive clients ourselves.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Companionship Visits</span><span class="right"><span class="price">$40–50/hr</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Simple, friendly support — a short visit, a quick question answered, a small favour.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Comprehensive Coordination Support</span><span class="right"><span class="price">$65–85/hr</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Open-ended, multi-step requests that touch several people or organizations.</p>
+            </details>
           </ul>
         </div>
         <div class="cat">
           <h3>Family Connection</h3>
           <ul>
-            <li><span class="item-name">Coffee Visit</span><span class="price">$40/visit</span></li>
-            <li><span class="item-name">Community Connection</span><span class="price">$75</span></li>
-            <li><span class="item-name">Monthly Peace-of-Mind</span><span class="price">$349/mo</span></li>
+            <details class="svc-item">
+              <summary><span class="item-name">Coffee Visit</span><span class="right"><span class="price">$40/visit</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A one-hour conversation visit — catching up on current events, a memory game or two.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Community Connection</span><span class="right"><span class="price">$75</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A 45-minute meeting with referrals to a seniors' centre, library, or volunteer opportunity, plus help registering.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Monthly Peace-of-Mind</span><span class="right"><span class="price">$349/mo</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A weekly one-hour visit (4/month), a monthly family report, and priority phone/text support (up to 3 non-urgent calls a month, 1–3 business day response).</p>
+            </details>
           </ul>
         </div>
         <div class="cat">
           <h3>Community &amp; Referrals</h3>
           <ul>
-            <li><span class="item-name">Group Workshops</span><span class="price">$250–800</span></li>
-            <li><span class="item-name">Retirement Residence Research & Accompaniment</span><span class="price">$40–60/hr</span></li>
-            <li><span class="item-name">Home Organization &amp; Cleaning Referral</span><span class="price">$40–60/hr</span></li>
-            <li><span class="item-name">Yard &amp; Pet Care Referral</span><span class="price">No charge</span></li>
+            <details class="svc-item">
+              <summary><span class="item-name">Group Workshops</span><span class="right"><span class="price">$250–800</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">A 2-hour group seminar for an organization — scam awareness, tablet use, or navigating government services.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Retirement Residence Research &amp; Accompaniment</span><span class="right"><span class="price">$40–60/hr</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">Researching residences based on your needs and budget, side-by-side comparisons, and accompaniment on tours — help asking the right questions, start to finish. The decision itself is always yours; we never make it for you. We never accept commissions or referral fees from retirement residences.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Home Organization &amp; Cleaning Referral</span><span class="right"><span class="price">$40–60/hr</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">We assess your needs and find a trusted organizing or cleaning provider, then coordinate the appointment — billed hourly for this search/coordination time. We don't do the organizing or cleaning ourselves; the provider separately pays us a referral fee, at no extra cost to you.</p>
+            </details>
+            <details class="svc-item">
+              <summary><span class="item-name">Yard &amp; Pet Care Referral</span><span class="right"><span class="price">$40–60/hr</span><span class="chevron"></span></span></summary>
+              <p class="svc-detail">We research and coordinate (introductions, scheduling) a trusted yard-care or pet-care provider — billed hourly for the search/coordination time. We never do the work ourselves; payment for the service itself goes directly to the provider.</p>
+            </details>
           </ul>
         </div>
       </div>
