@@ -117,26 +117,30 @@
   <section>
     <div class="wrap">
       <h2>Tell us about your business</h2>
-      <form onsubmit="event.preventDefault(); alert('Preview only — this form is not yet connected.');">
+      <form id="referralForm">
+        <input type="hidden" name="access_key" value="42c27893-ada7-4850-8a65-96d113fb14a9">
+        <input type="hidden" name="subject" value="New Referral Partner application from Senior Life Navigator website">
+        <input type="hidden" name="from_name" value="Senior Life Navigator Website">
+        <input type="checkbox" name="botcheck" style="display:none;">
         <div class="form-row">
           <label for="biz">Business name</label>
-          <input type="text" id="biz" required>
+          <input type="text" id="biz" name="business_name" required>
         </div>
         <div class="form-row">
           <label for="contact">Contact name</label>
-          <input type="text" id="contact" required>
+          <input type="text" id="contact" name="contact_name" required>
         </div>
         <div class="form-row">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" required>
+          <input type="tel" id="phone" name="phone" required>
         </div>
         <div class="form-row">
           <label for="email">Email</label>
-          <input type="email" id="email" required>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="form-row">
           <label for="service">Type of service</label>
-          <select id="service">
+          <select id="service" name="type_of_service">
             <option>House cleaning &amp; organization</option>
             <option>Yard care &amp; snow removal</option>
             <option>Minor home repairs / handyman</option>
@@ -148,7 +152,7 @@
         </div>
         <div class="form-row">
           <label for="insurance">Do you currently carry business liability insurance?</label>
-          <select id="insurance">
+          <select id="insurance" name="carries_liability_insurance">
             <option>Yes</option>
             <option>No</option>
             <option>Not sure</option>
@@ -156,13 +160,14 @@
         </div>
         <div class="form-row">
           <label for="notes">Anything else you'd like us to know?</label>
-          <textarea id="notes" placeholder="Years in business, service area, certifications, etc."></textarea>
+          <textarea id="notes" name="notes" placeholder="Years in business, service area, certifications, etc."></textarea>
         </div>
         <div class="checkbox-row">
-          <input type="checkbox" id="agree" required>
+          <input type="checkbox" id="agree" name="acknowledged_expression_of_interest" value="Yes" required>
           <label for="agree">I understand this is an expression of interest and does not create any contractual or referral relationship until a written Referral Agreement is signed.</label>
         </div>
-        <button type="submit" class="btn">Submit Application</button>
+        <button type="submit" class="btn" id="referralSubmitBtn">Submit Application</button>
+        <p id="referralStatus" style="margin-top:14px; font-size:16px; font-weight:700; display:none;"></p>
         <p class="disclaimer">Senior Life Navigator refers clients based on independent judgment and does not guarantee referral volume. All referred providers operate as independent businesses, not as employees, agents, or subcontractors of Senior Life Navigator.</p>
       </form>
     </div>
@@ -174,6 +179,47 @@
     © 2026 Senior Life Navigator · <a href="index.html">seniorlifenavigator.ca</a> · Waterloo Region, Ontario
   </div>
 </footer>
+
+<script>
+(function(){
+  var form = document.getElementById('referralForm');
+  if(!form) return;
+  var btn = document.getElementById('referralSubmitBtn');
+  var status = document.getElementById('referralStatus');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    btn.disabled = true;
+    var originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    status.style.display = 'none';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if(data.success){
+        status.textContent = "Thank you! We received your information and will follow up by email.";
+        status.style.color = '#D97B30';
+        status.style.display = 'block';
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    })
+    .catch(function(){
+      status.textContent = "Something went wrong sending this. Please email us directly at info@seniorlifenavigator.ca.";
+      status.style.color = '#B91C1C';
+      status.style.display = 'block';
+    })
+    .finally(function(){
+      btn.disabled = false;
+      btn.textContent = originalText;
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
