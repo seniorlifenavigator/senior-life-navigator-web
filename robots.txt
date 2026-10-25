@@ -1,0 +1,3 @@
+# Cloudflare adds its managed AI-bot rules above this line automatically.
+# This file only adds the sitemap location.
+Sitemap: https://seniorlifenavigator.ca/sitemap.xml
