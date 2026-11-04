@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Senior Life Navigator - Senior Care Coordination Waterloo</title>
+<title>Senior Care Coordination in Waterloo Region and Guelph | Senior Life Navigator</title>
 <link rel="canonical" href="https://seniorlifenavigator.ca/">
-<meta name="description" content="Non-medical senior life coordination for families in Waterloo Region and Guelph: appointments, paperwork, errands, retirement research, and daily support.">
+<meta name="description" content="Non-medical senior care coordination in Kitchener, Waterloo, Cambridge and Guelph: help with government forms, appointments, phones and tablets, home safety and downsizing.">
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="favicon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Senior Life Navigator | Waterloo Region Senior Care Coordination">
-<meta property="og:description" content="Non-medical senior life coordination for families in Waterloo Region and Guelph — appointments, paperwork, home safety, and everyday support.">
+<meta property="og:title" content="Senior Care Coordination in Waterloo Region and Guelph | Senior Life Navigator">
+<meta property="og:description" content="Non-medical senior care coordination in Kitchener, Waterloo, Cambridge and Guelph: government forms, appointments, tech help, home safety and everyday support for older adults and their families.">
 <meta property="og:image" content="https://seniorlifenavigator.ca/og-image.png">
 <meta property="og:url" content="https://seniorlifenavigator.ca/">
 <meta name="twitter:card" content="summary_large_image">
@@ -58,6 +58,8 @@
   .nav-wrap-wide{max-width:1400px;}
   .navlinks{display:flex; gap:22px; align-items:center; flex-wrap:nowrap;}
   .navlinks a{white-space:nowrap;}
+  @media(min-width:861px) and (max-width:1160px){ .navlinks{gap:12px !important;} .navlinks a{font-size:14px !important;} }
+  @media(min-width:861px) and (max-width:1000px){ .text-size-control{display:none !important;} }
   section{padding:96px 0;}
   @media(max-width:720px){
     section{padding:64px 0;}
@@ -121,7 +123,7 @@
   .text-size-control button:nth-child(3){font-size:19px;}
   .text-size-control button span{font-size:10px; vertical-align:super;}
   .text-size-control button:hover, .text-size-control button.active{background:var(--cream-deep);}
-  @media(max-width:860px){ .text-size-control{display:none;} }
+  @media(max-width:860px){ .text-size-control{display:none !important;} }
   .nav-services-wrap{position:relative;}
   .mega-menu{
     position:absolute; top:100%; left:50%; margin-top:14px; transform:translateX(-50%);
@@ -539,6 +541,13 @@
   .devnote .wrap{max-width:1120px;}
   .cat h3{margin-bottom:6px; padding-bottom:0; border-bottom:none;}
   .cat .cat-desc{font-size:14px; color:var(--ink-soft); margin:0 0 16px; padding-bottom:12px; border-bottom:1px solid var(--line); line-height:1.5;}
+  .guides{padding:72px 0; background:var(--white);}
+  .guide-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:28px;}
+  .guide-card{display:block; background:var(--cream); border:1px solid var(--line); border-radius:3px; padding:24px 26px; text-decoration:none; color:var(--ink);}
+  .guide-card:hover{border-color:var(--navy);}
+  .guide-card h3{margin:0 0 8px; color:var(--navy); font-size:20px; line-height:1.3;}
+  .guide-card p{margin:0; color:var(--ink-soft); font-size:15px;}
+  .guide-card .more{display:inline-block; margin-top:12px; font-weight:700; color:var(--navy); font-size:14px;}
 </style>
 <script type="application/ld+json">
 {
@@ -551,6 +560,8 @@
   "telephone": "+1-519-804-6141",
   "email": "info@seniorlifenavigator.ca",
   "description": "Non-medical senior life coordination service for families in Waterloo Region, Ontario, Canada, helping with appointments, paperwork, home safety, and everyday support so seniors can stay independent at home.",
+  "serviceType": ["Senior care coordination","Non-medical senior support","Government forms help for seniors","Tech help for seniors","Home safety setup","Downsizing coordination","Companionship visits"],
+  "slogan": "Guiding, Caring, Connecting.",
   "areaServed": [
     {"@type": "City", "name": "Kitchener"},
     {"@type": "City", "name": "Waterloo"},
@@ -571,6 +582,150 @@
     "https://www.facebook.com/SeniorLifeNavigator",
     "https://www.instagram.com/seniorlifenavigator.ca/",
     "https://www.linkedin.com/company/senior-life-navigator"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is senior care coordination?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Senior care coordination means one local person organizes the practical side of an older adult's daily life: appointments, paperwork, errands, home safety and connections to community services. We do not provide nursing or personal care. We coordinate, and you decide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you help seniors in Kitchener, Waterloo, Cambridge and Guelph?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We are based in Waterloo and help seniors and their families in Kitchener, Waterloo, Cambridge, Elmira, New Hamburg, Guelph and Stratford, and we also travel to nearby Paris in Brant County."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help my parent with government forms such as OHIP, CRA, CPP and OAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We help you understand letters and complete OHIP, CRA, CPP/OAS and Service Canada applications. We never sign as your representative, and the decisions stay with you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer tech help for seniors, including phones, tablets and scam awareness?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our Tech Starter Visit is a 90-minute home visit covering phone and tablet setup, MyChart, Zoom, scam-awareness basics and an online banking walkthrough. We also offer a 2-hour group seminar on scam awareness, tablet use or navigating government services for seniors' groups and community organizations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help my parent get home care in Ontario?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are not part of Ontario Health atHome and we do not arrange publicly funded home care ourselves. We can help you get organized before the first conversation, go along if your parent wishes, and follow up on the practical steps afterward. Our guide explains how to start: How to get home care in Ontario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help with downsizing or moving a parent to a smaller home or retirement residence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our Downsizing Coordination covers a moving timeline, document digitization, change-of-address notifications, sorting guidance and coordination with movers. We also research retirement residences and go along on tours. We never buy or sell belongings, and the decision is always yours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a companionship service for seniors in Waterloo Region?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our Companionship Visits offer friendly, non-medical company: conversation, a short visit, a quick question answered or a small favour, plus help with errands and outings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you a home care or nursing agency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We don't provide personal care, medical care, or nursing services, and we don't lift or transfer clients. We coordinate: connecting you to the right people and handling the logistics around them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you make medical or legal decisions for my parent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We never make medical, legal, or financial decisions on a client's behalf. We help organize information and coordinate appointments, but decisions stay with the client, family, and their doctor or lawyer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you handle my parent's money or banking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We never access, hold, or manage a client's money, bank accounts, or passwords. If financial coordination is needed, we help connect you with a qualified professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you transport clients in your own vehicle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We coordinate transportation (rides, accessible transit, volunteer driver programs) but do not personally drive clients in our own vehicle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a first conversation really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. There's no cost and no obligation to a first conversation. It's how we figure out together whether, and how, we can help."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Waterloo Region (Kitchener, Waterloo, Cambridge) and surrounding communities including Guelph."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing depends on the kind of support you need. See the Services section above for our current rates. A first conversation is always free, with no obligation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to sign a long-term contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Support can be a single visit or an ongoing plan, whatever makes sense for your family. Everything is put in writing in a simple service agreement before we begin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my family's information kept private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We keep client information confidential and only share it with your consent. See our Privacy Policy for details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if it's a medical emergency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Always call 911 first. Senior Life Navigator is a non-medical coordination service and does not provide emergency response."
+      }
+    }
   ]
 }
 </script>
@@ -629,7 +784,7 @@
         <span class="section-kicker">Senior Life Navigator &middot; Waterloo Region</span>
         <h1>Independence at Home.<br>Peace of Mind <em>for Families.</em></h1>
         <div class="hero-underline"><span class="u-sage"></span><span class="u-amber"></span></div>
-        <p class="lede">Senior Life Navigator is a non-medical senior life coordination service for families in Waterloo Region, helping with the everyday logistics of aging at home so you have one trusted local person to call.</p>
+        <p class="lede">Senior Life Navigator is a non-medical senior care coordination service for families in Waterloo Region and Guelph. We help with appointments, government forms, tech help, home safety and the everyday logistics of aging at home, so you have one trusted local person to call.</p>
         <div class="hero-ctas">
           <a href="#services" class="btn btn-primary">Discover Our Services &rarr;</a>
         </div>
@@ -1031,6 +1186,61 @@
     </div>
   </section>
 
+  <!-- ================= SENIOR CARE GUIDES (BLOG) ================= -->
+  <section class="guides" id="guides">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-kicker">Guides for Families</span>
+        <h2>Practical senior care guides for Waterloo Region families</h2>
+        <p>Plain-language answers based on official Canadian and Ontario sources.</p>
+      </div>
+      <div class="guide-grid">
+        <a class="guide-card" href="/blog/phone-scam-five-signs"><h3>Phone scams targeting seniors in Canada: 5 warning signs and what to do</h3><p>How to spot a grandparent or emergency scam and where to report it.</p><span class="more">Read the guide &rarr;</span></a>
+        <a class="guide-card" href="/blog/ontario-health-athome-assessment-preparation"><h3>How to get home care in Ontario: Ontario Health atHome referral guide</h3><p>Who can make a referral, what a care coordinator does, and how to prepare.</p><span class="more">Read the guide &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMMON QUESTIONS ================= -->
+  <section class="faq" id="questions">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-kicker">Common Questions</span>
+        <h2>Questions Waterloo Region families ask about senior care coordination</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What is senior care coordination?</summary>
+          <p>Senior care coordination means one local person organizes the practical side of an older adult's daily life: appointments, paperwork, errands, home safety and connections to community services. We do not provide nursing or personal care. We coordinate, and you decide.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you help seniors in Kitchener, Waterloo, Cambridge and Guelph?</summary>
+          <p>Yes. We are based in Waterloo and help seniors and their families in Kitchener, Waterloo, Cambridge, Elmira, New Hamburg, Guelph and Stratford, and we also travel to nearby Paris in Brant County.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you help my parent with government forms such as OHIP, CRA, CPP and OAS?</summary>
+          <p>Yes. We help you understand letters and complete OHIP, CRA, CPP/OAS and Service Canada applications. We never sign as your representative, and the decisions stay with you.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you offer tech help for seniors, including phones, tablets and scam awareness?</summary>
+          <p>Yes. Our Tech Starter Visit is a 90-minute home visit covering phone and tablet setup, MyChart, Zoom, scam-awareness basics and an online banking walkthrough. We also offer a 2-hour group seminar on scam awareness, tablet use or navigating government services for seniors' groups and community organizations.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you help my parent get home care in Ontario?</summary>
+          <p>We are not part of Ontario Health atHome and we do not arrange publicly funded home care ourselves. We can help you get organized before the first conversation, go along if your parent wishes, and follow up on the practical steps afterward. Our guide explains how to start: <a href="/blog/ontario-health-athome-assessment-preparation" style="color:var(--navy);">How to get home care in Ontario</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you help with downsizing or moving a parent to a smaller home or retirement residence?</summary>
+          <p>Yes. Our Downsizing Coordination covers a moving timeline, document digitization, change-of-address notifications, sorting guidance and coordination with movers. We also research retirement residences and go along on tours. We never buy or sell belongings, and the decision is always yours.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a companionship service for seniors in Waterloo Region?</summary>
+          <p>Yes. Our Companionship Visits offer friendly, non-medical company: conversation, a short visit, a quick question answered or a small favour, plus help with errands and outings.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= FAQ ================= -->
   <section class="faq" id="faq">
     <div class="wrap">
@@ -1090,6 +1300,7 @@
         <span class="section-kicker">Areas We Serve</span>
         <h2>Senior life coordination across Waterloo Region</h2>
         <p>Senior Life Navigator is based in Waterloo, Ontario. We help seniors and their families in Kitchener, Waterloo, Cambridge, Elmira and New Hamburg, as well as Guelph and Stratford. We also travel to nearby Paris in Brant County.</p>
+        <p>Families usually contact us when an older parent needs help with Ontario and federal government forms, phones and tablets, scam awareness, home safety, going to appointments, companionship visits, downsizing or a move to a retirement residence, or getting ready to ask for home care through Ontario Health atHome. If you are searching for senior help in Kitchener-Waterloo, Cambridge or Guelph, you are in the right place.</p>
         <p>Not sure whether your parent's address is in our area? Email <a href="mailto:info@seniorlifenavigator.ca" style="color:var(--navy);">info@seniorlifenavigator.ca</a> or call <a href="tel:5198046141" style="color:var(--navy);">(519) 804-6141</a> and we will let you know.</p>
       </div>
     </div>
