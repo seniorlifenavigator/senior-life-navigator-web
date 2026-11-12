@@ -8,12 +8,12 @@
 <link rel="canonical" href="https://seniorlifenavigator.ca/referral-partners">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0369A1; --navy-soft:#0284C7; --amber:#D97B30; --sage:#475569;
-    --cream:#F0F9FF; --cream-deep:#E0F2FE; --ink:#0C4A6E; --ink-soft:#334155;
-    --white:#ffffff; --line:#E0F2FE;
+    --navy:#17324D; --navy-soft:#24507A; --amber:#B5532C; --sage:#5B7564;
+    --cream:#FBF7F0; --cream-deep:#F3EBDD; --ink:#1E2A36; --ink-soft:#46525E;
+    --white:#ffffff; --line:#E8DECD;
   }
   *{box-sizing:border-box;}
   body{margin:0; font-family:'Atkinson Hyperlegible',sans-serif; color:var(--ink); background:var(--cream); font-size:17px; line-height:1.65;}
@@ -63,6 +63,7 @@
   }
   .disclaimer{font-size:13px; color:var(--sage); margin-top:14px;}
   footer{padding:36px 0; text-align:center; font-size:13px; color:var(--sage); border-top:1px solid var(--line);}
+h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:600}
 </style>
 </head>
 <body>
@@ -70,7 +71,7 @@
 <header>
   <div class="wrap">
     <a href="/" class="brand">
-      <svg viewBox="0 0 100 100" fill="none"><path d="M20 55 C35 50, 30 40, 45 38 C58 36, 62 30, 52 26" stroke="#0369A1" stroke-width="5" stroke-linecap="round"/><path d="M38 26 L50 15 L62 26 V42 H38 Z" stroke="#0369A1" stroke-width="4.5" stroke-linejoin="round" fill="none"/><path d="M46 42 V32 Q46 29 50 29 Q54 29 54 32 V42" stroke="#D97B30" stroke-width="4" fill="none"/></svg>
+      <svg viewBox="0 0 100 100" fill="none"><path d="M20 55 C35 50, 30 40, 45 38 C58 36, 62 30, 52 26" stroke="#17324D" stroke-width="5" stroke-linecap="round"/><path d="M38 26 L50 15 L62 26 V42 H38 Z" stroke="#17324D" stroke-width="4.5" stroke-linejoin="round" fill="none"/><path d="M46 42 V32 Q46 29 50 29 Q54 29 54 32 V42" stroke="#B5532C" stroke-width="4" fill="none"/></svg>
       Senior Life Navigator
     </a>
     <a href="/" class="back-link">← Back to main site</a>
@@ -202,7 +203,7 @@
     .then(function(data){
       if(data.success){
         status.textContent = "Thank you! We received your information and will follow up by email.";
-        status.style.color = '#D97B30';
+        status.style.color = '#B5532C';
         status.style.display = 'block';
         form.reset();
       } else {
