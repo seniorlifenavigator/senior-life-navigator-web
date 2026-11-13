@@ -58,8 +58,7 @@
   .nav-wrap-wide{max-width:1400px;}
   .navlinks{display:flex; gap:22px; align-items:center; flex-wrap:nowrap;}
   .navlinks a{white-space:nowrap;}
-  @media(min-width:861px) and (max-width:1160px){ .navlinks{gap:12px !important;} .navlinks a{font-size:14px !important;} }
-  @media(min-width:861px) and (max-width:1000px){ .text-size-control{display:none !important;} }
+  @media(min-width:1181px) and (max-width:1320px){ .navlinks{gap:14px !important;} .navlinks a{font-size:14px !important;} }
   section{padding:96px 0;}
   @media(max-width:720px){
     section{padding:64px 0;}
@@ -123,7 +122,6 @@
   .text-size-control button:nth-child(3){font-size:19px;}
   .text-size-control button span{font-size:10px; vertical-align:super;}
   .text-size-control button:hover, .text-size-control button.active{background:var(--cream-deep);}
-  @media(max-width:860px){ .text-size-control{display:none !important;} }
   .nav-services-wrap{position:relative;}
   .mega-menu{
     position:absolute; top:100%; left:50%; margin-top:14px; transform:translateX(-50%);
@@ -147,7 +145,7 @@
   .mobile-menu-btn.is-open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
   .mobile-menu-btn.is-open span:nth-child(2){opacity:0;}
   .mobile-menu-btn.is-open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
-  @media(max-width:860px){
+  @media(max-width:1180px){
     .mobile-menu-btn{display:flex;}
     .navlinks{
       display:flex; flex-direction:column; align-items:stretch; gap:2px;
@@ -983,6 +981,10 @@ html{overflow-x:clip}
 .why-visual video{display:block;width:100% !important;height:auto !important;border-radius:28px !important;object-fit:cover}
 .why-visual-badge{bottom:-22px;right:-22px;width:78px;height:78px;padding:6px;box-shadow:0 12px 26px -8px rgba(23,50,77,.45)}
 @media(max-width:820px){.why-visual-badge{right:10px !important;bottom:10px !important;width:56px !important;height:56px !important}.why-visual{position:static;margin:0 14px 28px 0;box-shadow:12px 12px 0 #E4ECE6, 0 30px 60px -30px rgba(23,50,77,.5)}.why-choose-grid{grid-template-columns:1fr}}
+.play-fallback{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:76px;height:76px;border-radius:50%;border:none;background:rgba(23,50,77,.82);color:#fff;font-size:30px;line-height:1;cursor:pointer;box-shadow:0 10px 30px -8px rgba(0,0,0,.5)}
+.play-fallback:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero-grid>*,.why-choose-grid>*{min-width:0}
+html,body{max-width:100%;overflow-x:clip}
 @media(max-width:900px){.hero-video-frame{box-shadow:12px 12px 0 #F6E3D7, 0 30px 60px -30px rgba(23,50,77,.5)}.hero-art{padding:0 12px 12px 0}}
 </style>
 </head>
@@ -1148,25 +1150,25 @@ html{overflow-x:clip}
       </div>
       <div class="who-grid">
         <div class="who-card">
-          <img class="who-icon-img" src="assets/media/who-nearby.png" alt="Adult son helping his senior father with groceries at home">
+          <img loading="lazy" decoding="async" class="who-icon-img" src="assets/media/who-nearby.png" alt="Adult son helping his senior father with groceries at home">
           <h3>Adult Children Living Nearby</h3>
           <p>You're close by but stretched thin between work, kids, and checking in. We handle the recurring logistics so your visits can be about connection, not chores.</p>
           <a href="#contact" class="who-link">Learn more &rarr;</a>
         </div>
         <div class="who-card">
-          <img class="who-icon-img" src="assets/media/who-out-of-town.png" alt="Senior smiling on a video call">
+          <img loading="lazy" decoding="async" class="who-icon-img" src="assets/media/who-out-of-town.png" alt="Senior smiling on a video call">
           <h3>Adult Children Living Out of Town</h3>
           <p>You can't be there day-to-day. We're your eyes, ears, and hands on the ground in Waterloo Region, with regular updates so you're never in the dark.</p>
           <a href="#contact" class="who-link">Learn more &rarr;</a>
         </div>
         <div class="who-card">
-          <img class="who-icon-img" src="assets/media/who-independent.png" alt="Senior cooking independently in his kitchen">
+          <img loading="lazy" decoding="async" class="who-icon-img" src="assets/media/who-independent.png" alt="Senior cooking independently in his kitchen">
           <h3>Seniors Living Independently</h3>
           <p>You want to stay in your own home, on your own terms. We help with the practical pieces: technology, appointments, paperwork, so independence stays realistic.</p>
           <a href="#contact" class="who-link">Learn more &rarr;</a>
         </div>
         <div class="who-card">
-          <img class="who-icon-img" src="assets/media/who-health-change.png" alt="Family talking together with a coordination notebook">
+          <img loading="lazy" decoding="async" class="who-icon-img" src="assets/media/who-health-change.png" alt="Family talking together with a coordination notebook">
           <h3>Families After a Health Change</h3>
           <p>A recent diagnosis, fall, or hospital stay changed things. We help build a coordination plan so the next chapter is organized, not overwhelming.</p>
           <a href="#contact" class="who-link">Learn more &rarr;</a>
@@ -1387,7 +1389,7 @@ html{overflow-x:clip}
     <div class="wrap why-choose-grid">
       <div class="why-visual">
         <video autoplay loop muted playsinline poster="assets/media/brand-story-loop-poster.jpg" aria-label="Senior Life Navigator brand story loop" style="width:100%;height:100%;object-fit:cover;border-radius:2px;"><source src="assets/media/brand-story-loop.webm" type="video/webm"><source src="assets/media/brand-story-loop.mp4" type="video/mp4"></video>
-        <img src="assets/media/sln-monogram-footer.png" alt="Senior Life Navigator monogram, senior life coordination in Waterloo Region" class="why-visual-badge">
+        <img loading="lazy" decoding="async" src="assets/media/sln-monogram-footer.png" alt="Senior Life Navigator monogram, senior life coordination in Waterloo Region" class="why-visual-badge">
       </div>
       <div class="why-text">
         <span class="section-kicker">Why Families Choose Us</span>
@@ -1412,7 +1414,7 @@ html{overflow-x:clip}
     <div class="wrap">
       <div>
         <div class="founder-photo" style="background:none;">
-          <img src="assets/media/founder-photo.jpg?v=20261017b" alt="Huseyin Unver, Founder of Senior Life Navigator" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
+          <img loading="lazy" decoding="async" src="assets/media/founder-photo.jpg?v=20261017b" alt="Huseyin Unver, Founder of Senior Life Navigator" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
         </div>
         <div class="mv-stack">
           <p class="mv"><strong>Our Mission:</strong> To be a trustworthy, transparent, local partner to seniors and their families in non-medical, day-to-day life coordination, built on respect for each senior's independence and right to make their own decisions.</p>
@@ -1685,7 +1687,7 @@ html{overflow-x:clip}
         <div class="footer-brand">
           <svg viewBox="0 0 100 100" fill="none"><path d="M20 55 C35 50, 30 40, 45 38 C58 36, 62 30, 52 26" stroke="#FBF8F3" stroke-width="5" stroke-linecap="round"/><path d="M38 26 L50 15 L62 26 V42 H38 Z" stroke="#FBF8F3" stroke-width="4.5" stroke-linejoin="round" fill="none"/><path d="M46 42 V32 Q46 29 50 29 Q54 29 54 32 V42" stroke="#D97B30" stroke-width="4" fill="none"/></svg>
           <span class="footer-brand-text">Senior Life Navigator</span>
-          <img src="assets/media/sln-monogram-footer.png" alt="Senior Life Navigator monogram logo" class="footer-monogram">
+          <img loading="lazy" decoding="async" src="assets/media/sln-monogram-footer.png" alt="Senior Life Navigator monogram logo" class="footer-monogram">
         </div>
         <p class="footer-desc">Non-medical senior life coordination and companionship across Waterloo Region and Guelph. Independence at home. Peace of mind for families.</p>
         <div class="footer-tag">Guiding &middot; Caring &middot; Connecting</div>
@@ -1786,6 +1788,27 @@ html{overflow-x:clip}
     });
   })();
 
+  // ---- Video autoplay fallback: if a phone blocks autoplay (low power / data saver), show a tap-to-play button ----
+  (function(){
+    document.querySelectorAll('video[autoplay]').forEach(function(v){
+      v.muted = true; v.setAttribute('playsinline','');
+      var host = v.parentElement;
+      if(getComputedStyle(host).position === 'static') host.style.position = 'relative';
+      var btn = null;
+      function addBtn(){
+        if(btn || !v.paused) return;
+        btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'play-fallback'; btn.setAttribute('aria-label','Play video'); btn.textContent = '▶';
+        btn.onclick = function(){ v.play(); };
+        host.appendChild(btn);
+      }
+      function rm(){ if(btn){ btn.remove(); btn = null; } }
+      v.addEventListener('playing', rm);
+      var pr = v.play();
+      if(pr && pr.catch) pr.catch(function(){ addBtn(); });
+      setTimeout(function(){ if(v.paused) addBtn(); }, 2500);
+    });
+  })();
   // ---- Hero video sound toggle (plays original audio once user opts in) ----
   window.SLNtoggleSound = function(){
     var v = document.getElementById('heroVideo');
@@ -1870,7 +1893,7 @@ html{overflow-x:clip}
     var servicesMenu = document.getElementById('servicesMenu');
     if(servicesLink && servicesMenu){
       servicesLink.addEventListener('click', function(e){
-        if(window.matchMedia('(max-width:860px)').matches){
+        if(window.matchMedia('(max-width:1180px)').matches){
           e.preventDefault();
           servicesMenu.classList.toggle('open');
         }
@@ -1882,7 +1905,7 @@ html{overflow-x:clip}
     });
     // Close on resize back to desktop
     window.addEventListener('resize', function(){
-      if(window.innerWidth > 860) closeMenu();
+      if(window.innerWidth > 1180) closeMenu();
     });
   })();
 </script>
