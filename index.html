@@ -985,6 +985,27 @@ html{overflow-x:clip}
 .hero-grid>*,.why-choose-grid>*{min-width:0}
 html,body{max-width:100%;overflow-x:clip}
 @media(max-width:900px){.hero-video-frame{box-shadow:12px 12px 0 #F6E3D7, 0 30px 60px -30px rgba(23,50,77,.5)}.hero-art{padding:0 12px 12px 0}}
+/* Active Brains (brain games) band */
+.ab-band{background:var(--cream)}
+.ab-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ab-wrap>*{min-width:0}
+.ab-pic{position:relative;margin:0 0 18px 14px}
+.ab-pic img.ab-photo{box-sizing:border-box;width:100%;height:420px;object-fit:cover;border-radius:28px;border:8px solid #fff;box-shadow:0 34px 70px -30px rgba(23,50,77,.55);display:block}
+.ab-badge{position:absolute;left:-14px;bottom:-18px;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 18px 40px -22px rgba(23,50,77,.45)}
+.ab-badge img{height:52px;width:auto;display:block}
+.ab-kicker{display:inline-block;color:#fff;background:#4E8A3E;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.ab-text h2{font-size:clamp(30px,3.8vw,44px);color:var(--navy);line-height:1.15;margin:12px 0 14px}
+.ab-text h2 em{color:var(--amber);font-style:italic}
+.ab-text p{color:var(--ink-soft);font-size:18px;margin:0 0 16px}
+.ab-chips{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 20px;padding:0;list-style:none}
+.ab-chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px;color:var(--navy)}
+.ab-btns{display:flex;flex-wrap:wrap;gap:12px}
+.ab-btns a{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:13px 24px;border-radius:999px}
+.ab-btns .ab-b1{background:var(--amber);color:#fff}
+.ab-btns .ab-b1:hover{background:#9A4423}
+.ab-btns .ab-b2{border:2px solid var(--navy);color:var(--navy)}
+.ab-fine{font-size:13px !important;color:#6b7280 !important;margin-top:16px !important}
+@media(max-width:860px){.ab-wrap{grid-template-columns:1fr;gap:36px}.ab-pic{margin:0 0 18px 0}.ab-badge{left:8px}.ab-pic img.ab-photo{height:260px}}
 </style>
 </head>
 <body>
@@ -1349,6 +1370,24 @@ html,body{max-width:100%;overflow-x:clip}
             </details>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACTIVE BRAINS (brain games, independent local business) ================= -->
+  <section class="ab-band" id="active-brains">
+    <div class="wrap ab-wrap">
+      <div class="ab-pic">
+        <img loading="lazy" decoding="async" class="ab-photo" src="assets/media/partners/active-brains-games.jpg" alt="Older adults laughing together over a board game">
+        <div class="ab-badge"><img loading="lazy" decoding="async" src="assets/media/partners/active-brains-logo.png" alt="Active Brains Education Academy logo"></div>
+      </div>
+      <div class="ab-text">
+        <span class="ab-kicker">Brain games for older adults</span>
+        <h2>Something to <em>look forward to</em></h2>
+        <p>We work with Active Brains Education Academy, a local Waterloo Region business. Active Brains runs social brain games and strategy games for older adults in small groups: friendly company, a bit of challenge and a lot of laughter. All levels are welcome.</p>
+        <ul class="ab-chips"><li>Brain and mind games</li><li>Strategy games</li><li>Friendly company</li><li>Learn and laugh</li></ul>
+        <div class="ab-btns"><a class="ab-b1" href="https://activebrains.ca" target="_blank" rel="noopener">Visit activebrains.ca</a><a class="ab-b2" href="tel:+12268995793">Call (226) 899-5793</a></div>
+        <p class="ab-fine">Active Brains is an independent business and sets its own fees. Brain games are a social and recreational activity; no medical or therapeutic claims are made.</p>
       </div>
     </div>
   </section>
