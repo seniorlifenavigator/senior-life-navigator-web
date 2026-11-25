@@ -58,7 +58,6 @@
   .nav-wrap-wide{max-width:1400px;}
   .navlinks{display:flex; gap:22px; align-items:center; flex-wrap:nowrap;}
   .navlinks a{white-space:nowrap;}
-  @media(min-width:1181px){ .navlinks .nav-cr{display:none !important;} }
   @media(min-width:1181px) and (max-width:1320px){ .navlinks{gap:14px !important;} .navlinks a{font-size:14px !important;} }
   section{padding:96px 0;}
   @media(max-width:720px){
@@ -1045,8 +1044,13 @@ html,body{max-width:100%;overflow-x:clip}
       <a href="/blog/">Blog</a>
       <a href="#contact">Contact</a>
       <a href="#families">For Families</a>
-      <a href="/community-resources" class="nav-cr">Community Resources</a>
-      <a href="/referral-partners" target="_blank" rel="noopener" style="font-weight:600;">Become a Referral Partner</a>
+      <div class="nav-services-wrap" id="resourcesWrap">
+        <a href="/community-resources" style="font-weight:600;">Community Resources</a>
+        <div class="mega-menu" id="resourcesMenu">
+          <a href="/community-resources">Community Resources</a>
+          <a href="/referral-partners" target="_blank" rel="noopener">Become a Referral Partner</a>
+        </div>
+      </div>
       <div class="text-size-control" role="group" aria-label="Adjust text size">
         <button type="button" onclick="SLNsetTextSize(-1)" aria-label="Decrease text size">A<span>−</span></button>
         <button type="button" onclick="SLNsetTextSize(0)" aria-label="Reset text size">A</button>
@@ -1816,9 +1820,9 @@ html,body{max-width:100%;overflow-x:clip}
   })();
 
   // ---- Services mega-menu: robust JS-driven show/hide (no CSS hover gap issues) ----
-  (function(){
-    var wrap = document.getElementById('servicesWrap');
-    var menu = document.getElementById('servicesMenu');
+  [['servicesWrap','servicesMenu'],['resourcesWrap','resourcesMenu']].forEach(function(pair){
+    var wrap = document.getElementById(pair[0]);
+    var menu = document.getElementById(pair[1]);
     if(!wrap || !menu) return;
     var hideTimer = null;
     function show(){ clearTimeout(hideTimer); menu.classList.add('open'); }
@@ -1829,7 +1833,7 @@ html,body{max-width:100%;overflow-x:clip}
     menu.addEventListener('mouseleave', hideDelayed);
     // Touch/click support (mobile & keyboard users)
     wrap.querySelector('a').addEventListener('click', function(e){
-      if(window.matchMedia('(hover: none)').matches){
+      if(window.matchMedia('(hover: none)').matches && !window.matchMedia('(max-width:1180px)').matches){
         e.preventDefault();
         menu.classList.toggle('open');
       }
@@ -1837,7 +1841,7 @@ html,body{max-width:100%;overflow-x:clip}
     document.addEventListener('click', function(e){
       if(!wrap.contains(e.target)) menu.classList.remove('open');
     });
-  })();
+  });
 
   // ---- Video autoplay fallback: if a phone blocks autoplay (low power / data saver), show a tap-to-play button ----
   (function(){
@@ -1942,18 +1946,20 @@ html,body{max-width:100%;overflow-x:clip}
     });
     backdrop.addEventListener('click', closeMenu);
     // On mobile, tapping "Services" should expand the mega-menu inline instead of navigating
-    var servicesLink = document.querySelector('#servicesWrap > a');
-    var servicesMenu = document.getElementById('servicesMenu');
-    if(servicesLink && servicesMenu){
-      servicesLink.addEventListener('click', function(e){
-        if(window.matchMedia('(max-width:1180px)').matches){
-          e.preventDefault();
-          servicesMenu.classList.toggle('open');
-        }
-      });
-    }
+    [['servicesWrap','servicesMenu'],['resourcesWrap','resourcesMenu']].forEach(function(pair){
+      var dropLink = document.querySelector('#' + pair[0] + ' > a');
+      var dropMenu = document.getElementById(pair[1]);
+      if(dropLink && dropMenu){
+        dropLink.addEventListener('click', function(e){
+          if(window.matchMedia('(max-width:1180px)').matches){
+            e.preventDefault();
+            dropMenu.classList.toggle('open');
+          }
+        });
+      }
+    });
     // Close menu when a real navigation link is tapped
-    nav.querySelectorAll('a:not(#servicesWrap > a)').forEach(function(a){
+    nav.querySelectorAll('a:not(#servicesWrap > a):not(#resourcesWrap > a)').forEach(function(a){
       a.addEventListener('click', closeMenu);
     });
     // Close on resize back to desktop
