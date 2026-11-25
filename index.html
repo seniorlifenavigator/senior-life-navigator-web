@@ -58,6 +58,7 @@
   .nav-wrap-wide{max-width:1400px;}
   .navlinks{display:flex; gap:22px; align-items:center; flex-wrap:nowrap;}
   .navlinks a{white-space:nowrap;}
+  @media(min-width:1181px){ .navlinks .nav-cr{display:none !important;} }
   @media(min-width:1181px) and (max-width:1320px){ .navlinks{gap:14px !important;} .navlinks a{font-size:14px !important;} }
   section{padding:96px 0;}
   @media(max-width:720px){
@@ -1044,6 +1045,7 @@ html,body{max-width:100%;overflow-x:clip}
       <a href="/blog/">Blog</a>
       <a href="#contact">Contact</a>
       <a href="#families">For Families</a>
+      <a href="/community-resources" class="nav-cr">Community Resources</a>
       <a href="/referral-partners" target="_blank" rel="noopener" style="font-weight:600;">Become a Referral Partner</a>
       <div class="text-size-control" role="group" aria-label="Adjust text size">
         <button type="button" onclick="SLNsetTextSize(-1)" aria-label="Decrease text size">A<span>−</span></button>
